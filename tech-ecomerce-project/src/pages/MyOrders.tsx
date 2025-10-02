@@ -37,8 +37,6 @@ const MyOrders = () => {
               }
           })
             .then((response) => {
-              console.log(response.data);
-              
               const mappedOrders: Order[] = response.data.map((order: any) => ({
                 id: order._id,
                 date: new Date(order.createdAt),

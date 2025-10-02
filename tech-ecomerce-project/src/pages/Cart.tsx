@@ -69,8 +69,6 @@ const Cart = () => {
               }
           })
             .then((response) => {
-            console.log(response.data.items);
-            
             if (response.data && Array.isArray(response.data.items)) {
               setCartItems(response.data.items)
             } else {

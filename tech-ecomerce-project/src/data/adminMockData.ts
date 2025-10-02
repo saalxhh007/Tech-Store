@@ -74,7 +74,6 @@ const apiUrl = process.env.REACT_APP_API;
 export const fetchOrders = async (accessToken: string): Promise<Order[]> => {
   try {
     const response = await axios.get(`${apiUrl}/v1/api/order`, { headers: { authorization: `Bearer ${accessToken}` } });
-    console.log(response.data);
     
     return Array.isArray(response.data) ? response.data : response.data.orders
   } catch (err) {
@@ -86,7 +85,6 @@ export const fetchOrders = async (accessToken: string): Promise<Order[]> => {
 export const fetchCustomers = async (accessToken: string): Promise<Customer[]> => {
   try {
     const response = await axios.get(`${apiUrl}/v1/api/user`, { headers: { authorization: `Bearer ${accessToken}` } });
-    console.log(response.data);
     
     return Array.isArray(response.data) ? response.data : response.data.customers
   } catch (err) {
